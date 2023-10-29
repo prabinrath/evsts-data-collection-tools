@@ -28,8 +28,9 @@ class BaslerCameraNode(object):
             if grabResult.GrabSucceeded():
                 image = self.converter.Convert(grabResult)
                 img = image.GetArray()
-                # self.pub.publish(self.br.cv2_to_imgmsg(img))
-                self.pub.publish(self.br.cv2_to_imgmsg(img))
+                img_msg = self.br.cv2_to_imgmsg(img)
+                img_msg.encoding = 'bgr8'
+                self.pub.publish(img_msg)
             grabResult.Release()
             self.loop_rate.sleep()
 
