@@ -1,1 +1,1 @@
-docker run --rm -it --privileged --network="host" --env DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix -v /home/prabin/catkin_ws:/root/catkin_ws -v /home/prabin/Repos/evsts-data-collection-tools:/root/evsts-data-collection prabinrath/ubuntu-ros1:data_collection bash
+docker run --rm -it --privileged --network="host" --env DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix -v /home/$USER/catkin_ws:/root/catkin_ws -v /home/$USER/Repos/evsts-data-collection-tools:/root/evsts-data-collection prabinrath/ubuntu-ros1:data_collection bash
